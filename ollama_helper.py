@@ -3,7 +3,6 @@ import time
 import spacy
 import requests
 import subprocess
-import threading
 
 def start_ollama(model: str):
     subprocess.Popen(f'cmd /k "ollama run {model}"')
