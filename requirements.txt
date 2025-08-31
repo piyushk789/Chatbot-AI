@@ -1,0 +1,3 @@
+customtkinter
+ollama_helper
+pillow
