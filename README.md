@@ -27,8 +27,8 @@ This project is built to provide a **fast, private, and internet-free AI assista
 
 1. ***Clone the Repository***
 ```bash
-git clone https://github.com/piyushk789/OfflineChatbot.git
-cd OfflineChatbot
+git clone https://github.com/piyushk789/Chatbot-AI.git
+cd Chatbot-AI
 ```
 
 2. ***Install Dependencies***
@@ -40,11 +40,11 @@ pip install -r requirements.txt
 
 - Download from Ollama website
 - Pull a model (example):
-  ```ollama pull mistral```
+  ```ollama pull deepseek-r1:1.5b```
 
 4. ***Run the Chatbot***
 ```bash
-python src/main.py
+python gui.py
 ```
 
 📦 **Prebuilt Application**
