@@ -19,7 +19,7 @@ This project is built to provide a **fast, private, and internet-free AI assista
 ## 📸 Screenshots
 | Chat Window | Settings |
 |-------------|-----------|
-| ![Chat Window](screenshots/Template.png) | ![Settings](screenshots/Template.png) |
+| ![Chat Window](Screenshots/Template.png) | ![Settings](Screenshots/Settings.png) |
 
 ---
 
