@@ -25,10 +25,15 @@ def is_ollama_running():
 
 def starter(model: str = "llama3", max_retries: int = 3):
     print("Starting Ollama...")
-    model_list = get_list_models()
+    try:
+        model_list = get_list_models()
+    except ValueError as e:
+        return "No models found. Please add a model using 'ollama pull <model_name>' command.\n"
+    except ConnectionError as e:
+        return "Ollama is not installed or not working. Please check your Ollama installation.\n"
 
     if model_list and model not in model_list:
-        raise ValueError("Invalid model")
+        return f"Model '{model}' not found. Available models: {', '.join(model_list)}\n"
 
     if not is_ollama_running():
         start_ollama(model)

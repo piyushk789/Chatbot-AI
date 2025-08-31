@@ -6,6 +6,7 @@ import subprocess
 import customtkinter as ctk
 from PIL import Image
 import ollama_helper as helper
+from tkinter import messagebox
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -36,7 +37,13 @@ class OfflineChatBot(ctk.CTk):
         self.play_photo = ctk.CTkImage(Image.open("sent.png").resize((30, 30)))
 
         # Data and State
-        self.models = helper.get_list_models()
+        try:
+            self.models = helper.get_list_models()
+        except ValueError as e:
+            messagebox.showinfo("Module Error", "No models found. Please add a model using 'ollama pull <model_name>' command.")
+        except ConnectionError as e:
+            messagebox.showerror("Ollama Error", "Ollama is not installed or not working. Please check your Ollama installation.")
+
         self.current_model = self.models[0] if self.models else "N/A"
         self.chat_history = load_history()
         self.active_temp = True  # Use conversation context by default
